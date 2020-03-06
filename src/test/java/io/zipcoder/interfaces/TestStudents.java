@@ -4,13 +4,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class TestStudents {
-    People group = Students.getINSTANCE();
 
-    @Test
-    public void studentsInstanceSizeTest(){
-        long expectedId = 3;
-        Assert.assertEquals(expectedId, group.count());
-    }
+    People<Student> group = Students.getINSTANCE();
 
     @Test
     public void studentsInstanceTest(){

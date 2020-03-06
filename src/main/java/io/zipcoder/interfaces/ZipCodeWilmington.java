@@ -12,21 +12,20 @@ public final class ZipCodeWilmington {
     private ZipCodeWilmington(){
         instructors = Instructors.getINSTANCE();
         students = Students.getINSTANCE();
-    };
+    }
 
     public void hostLecture(Teacher teacher, double numberOfHours){
-        teacher.lecture((Learner[]) students.toArray(),numberOfHours);
+        teacher.lecture(students.toArray(),numberOfHours);
     }
 
     public void hostLecture(long id, double numberOfHours){
-        Instructor i = (Instructor) instructors.findById(id);
-        i.lecture((Learner[]) students.toArray(),numberOfHours);
+        hostLecture(instructors.findById(id),numberOfHours);
     }
 
     public Map<Student,Double> getStudyMap(){
         Map<Student,Double> map = new HashMap<>();
-        for (Person s :students.toArray()) {
-            map.put((Student)s,((Student) s).getTotalStudyTime());
+        for (Student s :students.toArray()) {
+            map.put( s , s.getTotalStudyTime() );
         }
         return map;
     }
