@@ -10,10 +10,11 @@ public class TestZipCodeWilmington {
     @Test
     public void TestZipCodeWilmington(){
         ZipCodeWilmington z = ZipCodeWilmington.getINSTANCE();
-        z.hostLecture(11,10);
+        double hrs = 2.5;
+        z.hostLecture(Educator.BYLETH,hrs);
         Map<Student,Double> expected = z.getStudyMap();
+        Double expectedHours = hrs/expected.size();
 
-        Double expectedHours = 10.0/expected.size();
         for (Map.Entry<Student,Double> e :expected.entrySet()) {
             Assert.assertEquals(expectedHours,e.getValue());
         }

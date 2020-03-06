@@ -6,20 +6,14 @@ import java.util.Map;
 public final class ZipCodeWilmington {
 
     private Students students;
-    private Instructors instructors;
     private static final ZipCodeWilmington INSTANCE = new ZipCodeWilmington();
 
     private ZipCodeWilmington(){
-        instructors = Instructors.getINSTANCE();
         students = Students.getINSTANCE();
     }
 
     public void hostLecture(Teacher teacher, double numberOfHours){
         teacher.lecture(students.toArray(),numberOfHours);
-    }
-
-    public void hostLecture(long id, double numberOfHours){
-        hostLecture(instructors.findById(id),numberOfHours);
     }
 
     public Map<Student,Double> getStudyMap(){
