@@ -8,7 +8,7 @@ import java.util.Map;
 public class TestZipCodeWilmington {
 
     @Test
-    public void TestZipCodeWilmington(){
+    public void TestHostLectureZipCodeWilmington(){
         ZipCodeWilmington z = ZipCodeWilmington.getINSTANCE();
         double hrs = 2.5;
         z.hostLecture(Educator.BYLETH,hrs);

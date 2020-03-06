@@ -22,6 +22,7 @@ public class TestStudents {
         Assert.assertEquals(expectedId1, actualStu1.getId());
         Assert.assertEquals(expectedId2, actualStu2.getId());
         Assert.assertEquals(expectedId3, actualStu3.getId());
+
     }
 
 }
